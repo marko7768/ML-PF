@@ -1,6 +1,9 @@
 import streamlit as st
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+from nltk import word_tokenize
+from nltk import lemmatized_tokens
+from nltk import WordNetLemmatizer
 import joblib
 
 import nltk
