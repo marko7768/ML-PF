@@ -25,5 +25,5 @@ def preprocess_text(text):
 if st.button('Analizar Sentimientos'):
     preprocessed_text = preprocess_text(input_text)
     prediction = model.predict(preprocessed_text)
-    sentiment = 'Positivo' if prediction[0] == 2 else 'Negativo'
+    sentiment = 'Positivo' if prediction[0] == 0 else 'Negativo'
     st.write(f'El sentimiento del texto es: {sentiment}')
