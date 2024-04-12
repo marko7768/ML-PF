@@ -26,7 +26,7 @@ def preprocess_text(text):
     stemmed_content = [port_stem.stem(word) for word in stemmed_content if not word in stopwords.words('english')]
     stemmed_content = ' '.join(stemmed_content)
 
-    textVectorizado = vectorizer.fit_transform(stemmed_content)
+    #textVectorizado = vectorizer.fit_transform(stemmed_content)
     return stemmed_content
 
 if st.button('Analizar Sentimientos'):
