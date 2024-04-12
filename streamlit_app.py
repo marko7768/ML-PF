@@ -27,10 +27,10 @@ def preprocess_text(text):
     stemmed_content = ' '.join(stemmed_content)
 
     textVectorizado = vectorizer.fit_transform(stemmed_content)
-    return textVectorizado
+    return stemmed_content
 
 if st.button('Analizar Sentimientos'):
-    #preprocessed_text = preprocess_text(input_text)
+    preprocessed_text = preprocess_text(input_text)
     prediction = model.predict([input_text])
     sentiment = 'Positivo' if prediction[0] == 2 else 'Negativo'
     st.write(f'El sentimiento del texto es: {sentiment}')
