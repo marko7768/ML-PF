@@ -16,10 +16,16 @@ st.title('Aplicación de Regresión Lineal')
 input_text = st.text_input('Ingrese un texto para analizar sentimientos:')
 
 def preprocess_text(text):
-    text_list = [text]
-    #port_stem = PorterStemmer()
+    port_stem = PorterStemmer()
     vectorizer = TfidfVectorizer()
-    textVectorizado = vectorizer.fit_transform(text_list)
+
+    stemmed_content = re.sub('[^a-zA-Z]',' ',text)
+    stemmed_content = stemmed_content.lower()
+    stemmed_content = stemmed_content.split()
+    stemmed_content = [port_stem.stem(word) for word in stemmed_content if not word in stopwords.words('english')]
+    stemmed_content = ' '.join(stemmed_content)
+
+    textVectorizado = vectorizer.fit_transform(stemmed_content)
     return textVectorizado
 
 if st.button('Analizar Sentimientos'):
