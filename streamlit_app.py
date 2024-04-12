@@ -16,6 +16,7 @@ st.title('Aplicación de Regresión Lineal')
 input_text = st.text_input('Ingrese un texto para analizar sentimientos:')
 
 def preprocess_text(text):
+    text_list = [text]
     vectorizer = TfidfVectorizer()
     textVectorizado = vectorizer.fit_transform(text)
     return textVectorizado
