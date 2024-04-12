@@ -20,7 +20,7 @@ def preprocess_text(text):
     vectorizer = TfidfVectorizer()
 
     textVectorizado = vectorizer.fit_transform([text])
-    return stemmed_content
+    return textVectorizado
 
 if st.button('Analizar Sentimientos'):
     preprocessed_text = preprocess_text(input_text)
