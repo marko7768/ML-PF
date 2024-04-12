@@ -3,6 +3,7 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk import word_tokenize
 from nltk import WordNetLemmatizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 
 import nltk
@@ -15,12 +16,8 @@ st.title('Aplicación de Regresión Lineal')
 input_text = st.text_input('Ingrese un texto para analizar sentimientos:')
 
 def preprocess_text(text):
-    tokens = word_tokenize(text)
-    stop_words = set(stopwords.words('english'))
-    filtered_tokens = [word for word in tokens if word.lower() not in stop_words]
-    lemmatizer = WordNetLemmatizer()
-    lemmatized_tokens = [lemmatizer.lemmatize(word) for word in filtered_tokens]
-    return ' '.join(lemmatized_tokens)
+    vectorizer = TfidfVectorizer()
+    textVectorizado = vectorizer.fit_transform(text)
 
 if st.button('Analizar Sentimientos'):
     preprocessed_text = preprocess_text(input_text)
