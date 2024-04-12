@@ -17,8 +17,9 @@ input_text = st.text_input('Ingrese un texto para analizar sentimientos:')
 
 def preprocess_text(text):
     text_list = [text]
+    #port_stem = PorterStemmer()
     vectorizer = TfidfVectorizer()
-    textVectorizado = vectorizer.fit_transform(text)
+    textVectorizado = vectorizer.fit_transform(text_list)
     return textVectorizado
 
 if st.button('Analizar Sentimientos'):
