@@ -12,7 +12,7 @@ nltk.download('stopwords')
 
 model = joblib.load('modelo_regresion.pkl')
 
-st.title('Aplicación de Regresión Lineal')
+st.title('Aplicación ML')
 
 input_text = st.text_input('Ingrese un texto para analizar sentimientos:')
 
