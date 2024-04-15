@@ -1,14 +1,6 @@
 import streamlit as st
-from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
-from nltk import word_tokenize
-from nltk import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
-import re
-
-import nltk
-nltk.download('stopwords')
 
 model = joblib.load('modelo_regresion.pkl')
 
