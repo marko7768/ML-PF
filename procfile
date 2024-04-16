@@ -1,1 +1,1 @@
-web: deploy.py
+web: streamlit_app.py
