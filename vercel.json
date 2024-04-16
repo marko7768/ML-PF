@@ -4,7 +4,7 @@
     {
       "src": "streamlit_app.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "10mb", "pythonVersion": "3.12.2" }
+      "config": { "maxLambdaSize": "10mb", "pythonVersion": "3.9" }
     }
   ],
   "routes": [
