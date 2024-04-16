@@ -3,13 +3,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 
 model = joblib.load('modelo_regresion.pkl')
+vectorizer = joblib.load('vectorizer.pkl')
 
 st.title('Aplicación ML')
 
 input_text = st.text_input('Ingrese un texto para analizar sentimientos:')
 
 def preprocess_text(text):
-    vectorizer = TfidfVectorizer()
+    #vectorizer = TfidfVectorizer()
 
     textVectorizado = vectorizer.transform([text])
     return textVectorizado
